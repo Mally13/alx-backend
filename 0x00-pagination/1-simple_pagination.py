@@ -39,7 +39,7 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-        """returns dataset"""
+        """returns dataset based on index"""
         assert isinstance(page, int) and page > 0
         assert isinstance(page_size, int) and page_size > 0
 
@@ -48,5 +48,5 @@ class Server:
 
         if start_index >= len(dataset):
             return []
-        else:
-            return dataset[start_index:end_index]
+        end_index = min(end_index, len(dataset))
+        return dataset[start_index:end_index]
