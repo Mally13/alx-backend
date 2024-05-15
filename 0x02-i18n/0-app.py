@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
+"""Defines app routes"""
 from flask import Flask, render_template
-"""
-Defines app routes
-"""
+
+
 app = Flask(__name__)
 
 
